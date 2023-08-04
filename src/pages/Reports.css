@@ -1,0 +1,11 @@
+.reports{
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   
+   
+}
+.ind{
+    align-items: center;
+    display: flex;
+}
