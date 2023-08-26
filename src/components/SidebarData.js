@@ -9,37 +9,37 @@ import * as MdIcons from 'react-icons/md';
 export const SidebarData = [
   {
     title: 'Home',
-    path: '/Login/Navbar/Home',
+    path: '/Login/Home',
     icon: <AiIcons.AiFillHome />,
     cName: 'nav-text'
   },
   {
     title: 'Reports',
-    path: '/Login/Navbar/Reports',
+    path: '/Login/Reports',
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
   },
   {
     title: 'Products',
-    path: '/Login/Navbar/Products',
+    path: '/Login/Products',
     icon: <FaIcons.FaCartPlus />,
     cName: 'nav-text'
   },
   {
     title: 'Profile',
-    path: '/Login/Navbar/Profile',
+    path: '/Login/Profile',
     icon: <CgIcons.CgProfile />,
     cName: 'nav-text'
   },
   {
     title: 'Messages',
-    path: '/Login/Navbar/Messages',
+    path: '/Login/Messages',
     icon: <FaIcons.FaEnvelopeOpenText />,
     cName: 'nav-text'
   },
   {
     title: 'Settings',
-    path: '/Login/Navbar/Settings',
+    path: '/Login/Settings',
     icon: <FiIcons.FiSettings />,
     cName: 'nav-text'
   },

@@ -27,7 +27,7 @@ function Register() {
                 <input type="password" placeholder="Password"/>
             </div>
             <div class="inputBx">
-              <Link to={{pathname:"/Login/Register/Navbar"}}>
+              <Link to={{pathname:"/Login/Home"}}>
               <input type="submit" placeholder="Sign up"/>
               </Link>
                 

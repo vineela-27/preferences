@@ -17,14 +17,14 @@ function Login() {
                 <input type="password" placeholder="Password"/>
             </div>
             <div class="inputBx">
-              <Link to={{pathname:"/Login/Navbar"}}>
+              <Link to={{pathname:"/Login/Home"}}>
               <input type="submit" placeholder="Sign in"/>
               </Link>
                 
             </div>
             <div class="links">
             <a>Forgot Password</a>
-            <Link to={{pathname:"/Login/Register"}}>
+            <Link to={{pathname:"/Register"}}>
             <button style={{'font-size':'20px'}}>Signup</button>
               </Link>
             

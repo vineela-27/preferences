@@ -1,48 +1,111 @@
-import React, { useState } from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import { SidebarData } from './SidebarData';
-import './Navbar.css';
-import { IconContext } from 'react-icons';
-
+import SearchField from 'react-search-field';
+import { NavLink } from "react-router-dom";
+import "./Navbar.css";
+import * as AiIcons from 'react-icons/ai';
+import * as FaIcons from 'react-icons/fa';
+import * as CgIcons from 'react-icons/cg';
+import * as MdIcons from 'react-icons/md';
+import * as TbIcons from 'react-icons/tb';
+import * as BsIcons from 'react-icons/bs';
 function Navbar() {
-  const [sidebar, setSidebar] = useState(false);
+  const [click, setClick] = useState(false);
 
-  const showSidebar = () => setSidebar(!sidebar);
-
+  const handleClick = () => setClick(!click);
   return (
     <>
-      <IconContext.Provider value={{ color: '#fff' }}>
-        <div className='navbar'>
+      <nav className="navbar">
+        <div className="nav-container">
+          <NavLink exact to="/" className="nav-logo">
+            
+            <span></span>
+            <span></span>
+            PANACE.AI
+            <i className="fas fa-code"></i>
+          </NavLink>
           
-          <Link to='#' className='menu-bars'>
-            <FaIcons.FaBars onClick={showSidebar} />
-          </Link>
-          <div class="name">
-            <h1>PANACE.AI</h1>
+          
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <li className="nav-item">
+              <NavLink
+                exact
+                to="/Login/Searchbar"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+              <BsIcons.BsSearch />
+            
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/Login/Home"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+              <AiIcons.AiFillHome />
+            
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/Login/Reports"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+              <FaIcons.FaCartPlus />
+                Cart
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/Login/profile"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+              <CgIcons.CgProfile />
+                profile
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+              <MdIcons.MdOutlineLogout />
+                logout
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+              <TbIcons.TbShieldHeart />
+                team@3
+              </NavLink>
+            </li>
+          </ul>
+          <div className="nav-icon" onClick={handleClick}>
+            <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
           </div>
         </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul className='nav-menu-items' onClick={showSidebar}>
-            <li className='navbar-toggle'>
-              <Link to='#' className='menu-bars'>
-                <AiIcons.AiOutlineClose />
-              </Link>
-            </li>
-            {SidebarData.map((item, index) => {
-              return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    <span>{item.title}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </IconContext.Provider>
+      </nav>
     </>
   );
 }
